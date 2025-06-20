@@ -1,0 +1,537 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
+
+.hero-section {
+  position: relative;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 100%;
+  filter: grayscale(10%) brightness(60%);
+  aspect-ratio: 16 / 9;
+  background: url('https://plus.unsplash.com/premium_photo-1682146314309-40c5a437a7a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  color: white;
+}
+
+.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+
+.brand, .phone {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.text-content {
+  max-width: 500px;
+  margin-top: 15%;
+  margin-left: 20%;
+}
+
+.text-content h1 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+
+.text-content h2 {
+  font-size: 1.2em;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.form-container {
+  position: absolute;
+  bottom: 100px;
+  right: 60px;
+  width: 500px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  color: black;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  margin-right: 100px;
+}
+
+.form-container h3 {
+  color: red;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-container .note {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  color: #666;
+}
+
+.appointment-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 300px;
+  width: 100%;
+}
+
+.appointment-form h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.appointment-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.appointment-form button {
+  width: 100%;
+  padding: 10px;
+  background: #e63946;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.services, .projects, .reviews, .why-us {
+  padding: 40px;
+  text-align: center;
+}
+
+.services h2, .projects h2, .reviews h2, .why-us h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.services span, .projects span, .reviews span {
+  color: #e63946;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.service {
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding-bottom: 10px;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.service img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-content {
+  padding: 15px;
+}
+
+.service-content h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.service-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.view-all-services-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #e63946;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.project-list, .reasons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project, .reason {
+  flex: 1 1 200px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.view-btn, .book-footer {
+  padding: 10px 20px;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.why-us {
+  background: #e63946;
+  color: #fff;
+  padding: 40px;
+}
+
+.why-us-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+}
+
+.why-us-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-us-item img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.why-us-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.why-us-item p {
+  font-size: 15px;
+  max-width: 250px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.reviews {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.reviews h2 span {
+  color: red;
+}
+
+.review-carousel {
+  position: relative;
+  padding: 20px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.review-wrapper {
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  height: 150px;
+}
+
+.review-content {
+  white-space: nowrap;
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+.reviewer {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.stars {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.local-services {
+  padding: 60px 20px;
+  min-height: 300px;
+  font-size: larger;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.book-appointment {
+  background: #e63946;
+  width: 300px;
+  height: 50px;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  margin-top: 2rem;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer button {
+  margin-top: 10px;
+  background: #e63946;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+  .service-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-us-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p,
+  .services h2,
+  .projects h2,
+  .reviews h2,
+  .why-us h2 {
+    font-size: 24px;
+  }
+
+  .service-content h3 {
+    font-size: 16px;
+  }
+
+  .service-content p {
+    font-size: 13px;
+  }
+   .form-container {
+    margin-top: 340px;
+    position: relative;
+    margin: 340px auto;
+    bottom: auto;
+    right: auto;
+    z-index: 4;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header.hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .appointment-form {
+    margin-top: 20px;
+  }
+
+  .project-list, .reasons {
+    flex-direction: column;
+  }
+
+  .service-list,
+  .why-us-icons {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay {
+    padding: 20px;
+    height: auto;
+  }
+
+  .top-bar {
+    top: 10px;
+    padding: 0 20px;
+  }
+
+  .brand, .phone {
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+
+  .text-content h1 {
+    font-size: 2em;
+  }
+
+  .text-content p {
+    font-size: 1em;
+  }
+
+  .centered {
+    margin-top: 240px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    text-align: center;
+  }
+
+  .form-container {
+    margin-top: 340px;
+    position: relative;
+    margin: 340px auto;
+    bottom: auto;
+    right: auto;
+    z-index: 4;
+  }
+
+  .background-image {
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brand, .phone {
+    font-size: 0.8em;
+  }
+
+  .text-content h1 {
+    font-size: 1.6em;
+  }
+
+  .text-content p {
+    font-size: 1em;
+  }
+
+  .form-container {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .form-container h3 {
+    font-size: 1.1em;
+  }
+
+  .background-image {
+    height: 70%;
+  }
+}
